@@ -1,0 +1,33 @@
+<form action="/public_bookmarks/create" method='post'>
+  <% if @public_bookmark.errors.any? %>
+    <div id="error_explanation">
+      <span><%= pluralize(@public_bookmark.errors.count, "error") %> prohibited this public_bookmark from being saved:</span>
+
+      <ul>
+      <% @public_bookmark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label for="public_bookmark_title">Title</label><br>
+    <input id="public_bookmark_title" name="public_bookmark[title]" type="text">
+  </div>
+  <div class="field">
+    <label for="public_bookmark_url">Url</label><br>
+    <input id="public_bookmark_url" name="public_bookmark[url]" type="text">
+  </div>
+  <div class="field">
+    <label for="public_bookmark_description">Description</label><br>
+    <textarea id="public_bookmark_description" name="public_bookmark[description]"></textarea>
+  </div>
+  <div class="field">
+    <label for="public_bookmark_submitter_email">Submitter email</label><br>
+    <input id="public_bookmark_submitter_email" name="public_bookmark[submitter_email]" type="text">
+  </div>
+  <div class="actions">
+    <input type="submit" value="Create Public bookmark">
+  </div>
+</form>

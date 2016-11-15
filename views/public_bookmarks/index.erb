@@ -1,0 +1,44 @@
+<span>Listing public_bookmarks</span>
+
+<p id="notice"><%= flash[:notice] %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th>Submitter email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_bookmarks.each do |public_bookmark| %>
+      <tr>
+        <td><%= public_bookmark.title %></td>
+        <td><%= public_bookmark.url %></td>
+        <td><%= public_bookmark.description %></td>
+        <td><%= public_bookmark.submitter_email %></td>
+        <td>
+          <a href="/public_bookmarks/<%= public_bookmark.id %>">
+            Show
+          </a>
+        </td>
+        <% if @authenticated %>
+          <td>
+            <form action="/public_bookmarks/destroy/<%= public_bookmark.id %>" method='post'>
+              <input type='submit' value='Destroy' onclick="return confirm('Are you sure?')">
+            </form>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a href='/public_bookmarks/new'>
+  New Public Bookmark
+</a>

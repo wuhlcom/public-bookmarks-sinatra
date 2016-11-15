@@ -1,0 +1,7 @@
+
+development:
+  adapter: postgresql
+  database: public-bookmarks-sinatra_development
+  host: localhost
+  username: postgres
+  password: 123456

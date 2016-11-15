@@ -1,0 +1,25 @@
+<p id="notice"><%= flash[:notice] %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @public_bookmark.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @public_bookmark.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @public_bookmark.description %>
+</p>
+
+<p>
+  <strong>Submitter email:</strong>
+  <%= @public_bookmark.submitter_email %>
+</p>
+
+<a href='/public_bookmarks'>
+  Back
+</a>
